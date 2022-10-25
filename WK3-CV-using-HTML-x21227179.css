@@ -1,0 +1,45 @@
+body {
+	width: 70%;	
+	display: grid;
+	margin: auto;
+	justify-content: center;
+	align-items: center;
+	
+}
+
+
+
+h1{
+	text-align:center;	
+ 	background-color: lightgrey;
+ 	color: blue;
+}
+
+h3{
+	
+	color: grey;
+}
+
+h2{
+	
+ 	Background-color: #E3E3E3; 
+}
+
+
+
+@media only screen and (max-width: 600px) {
+  div {
+    background-color: pink;
+  }
+  h1 {
+      background-color: yellow;
+  }
+  h2 {
+        background-color: lightblue;
+  }
+}
+
+
+.column1 {
+  columns: 1px 3;
+}
