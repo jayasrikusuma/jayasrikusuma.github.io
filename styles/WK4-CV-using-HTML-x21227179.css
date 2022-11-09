@@ -1,0 +1,67 @@
+body {
+	width: 100%;		
+	margin: auto;
+	justify-content: center;
+	align-items: center;	
+}
+
+
+
+h1{
+	text-align:center;	
+ 	background-color: #e3ebf1;
+ 	color: blue;
+}
+
+h3{
+	
+	color: grey;
+}
+
+h2{
+	
+ 	Background-color: #e3ebf1; 
+}
+
+
+
+@media only screen and (max-width: 780px) {
+  div {
+    background-color: pink;
+  }
+  h1 {
+      background-color: yellow;
+  }
+  h2 {
+        background-color: lightblue;
+  }
+}
+
+
+.column1 {
+  columns: 1px 3;
+}
+
+  .parent {
+    display: flex;
+  }
+  
+ 
+
+
+ #header{
+	display:flex;
+	background:#Ea44ad;
+	font-size:200%;
+}
+
+#header1{
+	flex:2;	
+	text-align:center;	
+}
+
+#header2{
+	display:flex;
+	flex:10;	
+	align-items:center;
+}
