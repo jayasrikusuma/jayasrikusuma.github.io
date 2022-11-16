@@ -1,0 +1,58 @@
+<html>
+	<head>
+		<title> Rock Papers Scissors	</title>
+		
+		<!-- Javascript for checking winner -->
+		<script src="rockPaperScissors.js"></script>
+
+	</head>
+	
+	<body>
+	
+		<div class="row">
+			<form >
+				
+				<!--
+					<label for="player1"><br>Player1</br></label>
+					<input type="text" placeholder="Enter Username" id="player1" required>
+					
+					<label for="player2"><br>Player2</br></label>
+					<input type="text" placeholder="Select your Choice" id="player2" required>
+					<br></br>
+				-->
+				
+				
+				<label for="player1">Player1</label>
+				<select required name="player1" id="player1" >
+					<option value="Rock">Rock</option>
+					<option value="Paper">Paper</option>
+					<option value="Scissors">Scissors</option>
+					
+				</select>
+				
+				<label for="player2">Player2</label>
+				<select required name="player2" id="player2" >
+					<option value="Rock">Rock</option>
+					<option value="Paper">Paper</option>
+					<option value="Scissors">Scissors</option>
+					
+				</select>
+			
+			</form>
+			<button type="submit" onClick="checkWinner()">Check Winner</button>
+			<br></br>
+
+
+		</div>
+		
+		<div id="result">
+		</div>
+	
+	</body>
+	
+	
+
+
+
+
+</html>
