@@ -1,0 +1,5 @@
+javaScript;
+https://github.com/jayasrikusuma/jayasrikusuma.github.io/blob/main/rockPaperScissors/rockPaperScissors.js
+
+html;
+https://github.com/jayasrikusuma/jayasrikusuma.github.io/blob/main/rockPaperScissors/RockPaperScissors.html
