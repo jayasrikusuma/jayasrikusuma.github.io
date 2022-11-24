@@ -6,25 +6,25 @@
 			var player2 = allowedValues[(Math.random() * allowedValues.length) | 0]
 			
 			
-			alert("Attempts Left: "+ attempt);
+			
 			
 			if( player1 == "Rock" && player2 =="Paper"){			
-				alert("Player 2 wins \nPlayer1: " + player1 + "; Player2: "+ player2); 
+				alert("Attempts Left: "+ attempt +"\nPlayer 2 wins \nPlayer1: " + player1 + "; Player2: "+ player2); 
 				attempt --;// Decrementing by one.
 
 			} else if( player1 == "Paper" && player2 =="Scissors"){		
-				alert("Player 2 wins \nPlayer1: "+player1 +"; Player2: "+ player2);
+				alert("Attempts Left: "+ attempt +"\n"Player 2 wins \nPlayer1: "+player1 +"; Player2: "+ player2);
 				attempt --;// Decrementing by one.
 
 			} else if( player1 == "Scissors" && player2 =="Rock"){		
-				alert("Player 2 wins \nPlayer1: "+player1 +"; Player2: "+ player2);
+				alert("Attempts Left: "+ attempt +"\n"Player 2 wins \nPlayer1: "+player1 +"; Player2: "+ player2);
 				attempt --;// Decrementing by one.
 
 			} else if(( player1 == "Rock" && player2 =="Scissors") || ( player1 == "Paper" && player2 =="Rock") || ( player1 == "Scissors" && player2 =="Paper") ){			
-				alert("Player1 wins \nPlayer1: "+player1 +"; Player2: "+ player2);	
+				alert("Attempts Left: "+ attempt +"\n"Player1 wins \nPlayer1: "+player1 +"; Player2: "+ player2);	
 				
 			}else if( (player1 == "Rock" & player2 =="Rock") | (player1 == "Paper" & player2 =="Paper") | (player1 == "Scissors" & player2 =="Scissors") ){ 
-				alert("Its a draw. \nPlayer1: "+player1 +"\n Player2: "+ player2);	
+				alert("Attempts Left: "+ attempt +"\n"Its a draw. \nPlayer1: "+player1 +"\n Player2: "+ player2);	
 		
 			}
 			
