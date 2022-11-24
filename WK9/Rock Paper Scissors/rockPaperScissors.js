@@ -3,25 +3,20 @@
 			var player1 = document.getElementById("player1").value;
 			
 			var allowedValues = ['Rock', 'Paper', 'Scissors']; 
-			var player2 = allowedValues[(Math.random() * allowedValues.length) | 0]
+			var player2 = allowedValues[(Math.random() * allowedValues.length) | 0]			
 			
-			
-			//alert("Attempts Left: "+ attempt);
-			
+			//alert("Attempts Left: "+ attempt);			
 			if( player1 == "Rock" && player2 =="Paper"){			
 				attempt --;// Decrementing by one.
-				alert("\n Player 2 wins \nPlayer1: " + player1 + "; Player2: "+ player2 + "\nAttempts Left: "+ attempt ); 
-				
+				alert("\n Player 2 wins \nPlayer1: " + player1 + "; Player2: "+ player2 + "\nAttempts Left: "+ attempt ); 				
 
 			} else if( player1 == "Paper" && player2 =="Scissors"){		
 				attempt --;// Decrementing by one.
-				alert("\n Player 2 wins \nPlayer1: "+player1 +"; Player2: "+ player2 + "\nAttempts Left: "+ attempt);
-				
+				alert("\n Player 2 wins \nPlayer1: "+player1 +"; Player2: "+ player2 + "\nAttempts Left: "+ attempt);				
 
 			} else if( player1 == "Scissors" && player2 =="Rock"){		
 				attempt --;// Decrementing by one.
-				alert("\n Player 2 wins \nPlayer1: "+player1 +"; Player2: "+ player2 + "\nAttempts Left: "+ attempt);
-				
+				alert("\n Player 2 wins \nPlayer1: "+player1 +"; Player2: "+ player2 + "\nAttempts Left: "+ attempt);				
 
 			} else if(( player1 == "Rock" && player2 =="Scissors") || ( player1 == "Paper" && player2 =="Rock") || ( player1 == "Scissors" && player2 =="Paper") ){			
 				alert("\n Player1 wins \nPlayer1: "+player1 +"; Player2: "+ player2 + "\nAttempts Left: "+ attempt);	
@@ -30,9 +25,7 @@
 				alert("\n Its a draw. \nPlayer1: "+player1 +"\n Player2: "+ player2 + "\nAttempts Left: "+ attempt);	
 		
 			}
-			
-				
-			
+						
 			if( attempt == 0){
 				document.getElementById("player").style.display="none";	
 			document.getElementById("btn").style.display="none";
