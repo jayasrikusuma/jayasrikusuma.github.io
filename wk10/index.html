@@ -1,0 +1,78 @@
+<html>
+	<head>
+		<title> Week 10 - Lab</title>		
+
+		
+		<style>
+		.container {
+		 
+		  background-color: #e3ebf1;
+		  padding: 100px;
+		  margin:10px;
+		}
+
+
+	</style>
+
+	</head>
+	
+	<body>
+		<div class="container">
+		<h1>Week 10 Lab</h1>
+			<div id="result">
+			<br/>
+			
+			<button onClick=checkStudentStatus()>Try - Grade Calculator</button>
+			<p>Grades System: Marks > = 40 is PASS and below 40 is FAIL</p>
+
+			</div>
+		
+		</div>
+
+		
+	<script>
+
+
+		/*
+			Create an application that asks a user to enter how many subjects they have. 
+			The application should then ask the user to enter the results for each subject. 
+			Store these results in an array and print them back to the user along with their overall average and grade for each module.
+		*/
+		function checkStudentStatus( ) {
+			var subjectsCount = prompt("Enter how many subjects");
+			var subjectMarks = 0;
+			var totalMarks = 0;
+			var arrayMarks=[ ];
+			var grade="FAIL";
+			var arrayGrades=[ ];
+			for(i=0; i<subjectsCount; i++){
+				subjectMarks= prompt("Enter subject marks");
+				if(parseFloat(subjectMarks)>=40){
+					grade = "PASS";
+				}else{
+					grade = "FAIL";
+				}
+				arrayMarks.push(subjectMarks);				
+				arrayGrades.push(grade);
+				
+				totalMarks += parseFloat(subjectMarks);
+				
+			}
+			
+			document.getElementById('result').innerHTML += ("<p>=======================================================</p>");
+			for(i=0; i<subjectsCount; i++){
+				document.getElementById('result').innerHTML += ("<p> Subject["+(i+1)+"]:  Marks "+ arrayMarks[i] + "; Grade = " + arrayGrades[i] + "</p>");
+			}
+			
+			document.getElementById('result').innerHTML +=("<p>Overall Average: "+ totalMarks / parseFloat(subjectsCount)+ "</p>");
+
+
+		}
+
+	</script>
+</body>
+
+
+
+
+</html>
