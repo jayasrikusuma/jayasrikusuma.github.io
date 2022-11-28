@@ -1,5 +1,5 @@
 //Author: Jayasri Kusuma
-set uname=,
+
 //Different Sizes - Codes and Descriptions
 sizes ={
 	'0':"6\" (Serves max.8 persons)",
