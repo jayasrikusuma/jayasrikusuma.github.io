@@ -60,7 +60,7 @@ function showSlides(n) {
  
  
  // Default values for Login ID 
- localStorage.setItem("userName","John");   //local storage variable used to store a default value on website first loading - index.html
+ localStorage.setItem("userName","Guest");   //local storage variable used to store a default value on website first loading - index.html
  document.getElementById('LoginId').innerHTML = localStorage.getItem("userName");
 // Default values for Cart Value
 document.getElementById('cart').innerHTML="0 \(€\)" ;	
