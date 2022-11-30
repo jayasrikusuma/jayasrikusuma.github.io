@@ -1,6 +1,6 @@
 //Author: Jayasri Kusuma
 
-localStorage.setItem("userName","log-in");
+localStorage.setItem("userName","Guest");
 document.getElementById('LoginId').innerHTML = localStorage.getItem("userName");
 
 document.getElementById('cart').innerHTML="0 \(€\)" ;	
