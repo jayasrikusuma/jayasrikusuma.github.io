@@ -1,5 +1,5 @@
  
- document.getElementById('LoginId').innerHTML = localStorage.getItem("userName");
+ document.getElementById('LoginId').innerHTML = "John";
 // Default values for Cart Value
 document.getElementById('cart').innerHTML="0 \(€\)" ;		
 
