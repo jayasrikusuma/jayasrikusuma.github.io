@@ -414,7 +414,7 @@ form button{
   }
 
   
-  .order-calc{
+ .order-calc{
 	margin-left: 30px; 	padding: 15px;	border: 0px solid;	border-radius: 2px; font-family: "Arial", sans-serif;	font-size: 14px; color: black; font-weight: bold;	
 	width: 300px; 	height:500px; max-width: 100%;	max-height: 100%;	background-color: white; box-shadow: 1px 1px 5px 2px #867979;
 	justify-content: center; text-align: left;
@@ -449,7 +449,12 @@ form button{
 
 /* Login Form CSS - Start */
 #LoginId{
-	display: space-between; 	font-size: 7px;	font-weight: italic; 	color: purple; 	text-align: center;	text-transform: lowercase;	
+	display: space-between; 	
+	font-size: 7px;	
+	font-weight: italic; 	
+	color: purple; 	
+	text-align: center;	
+	text-transform: lowercase;	
 }
 
 .login-form-area{	
