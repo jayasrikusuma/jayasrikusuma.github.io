@@ -5,7 +5,7 @@
   <head>
     <title>Contact us page</title>
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="images/logo.png">
+    <link rel="icon" type="image/x-icon" href="../../images/Logo.PNG">
 
     <!-- Embedding font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,7 +22,6 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="../../style.css" />
-    <link rel="stylesheet" href="style.css" />
     
     	<!-- Google Symbols  for Login and Cart -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />    
@@ -110,12 +109,12 @@
       <!--Container for flexboxes-->
       <div class="container-contact">
         <div class="find-us">
-          <div class="map-box"> <!--insert map here beside the address on the right-->
+          <div class="map-box">
             <h3><strong>Get directions:</strong></h3><br>
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2382.2164941216183!2d-6.471266348651563!3d53.33938067987932!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x486773c966cfccff%3A0xd7eaa366a1bc45a6!2s19%20Adamstown%20Blvd%2C%20Finnstown%2C%20Lucan%2C%20Co.%20Dublin%2C%20K78%20W894!5e0!3m2!1sen!2sie!4v1670000911147!5m2!1sen!2sie" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             <div class="row separator_blank"></div>
           </div>
-          <div class="address-box">
+          <div class="address-box"><!--insert address here beside the map on the right-->
             
             <h3><strong>Our Contacts:</strong></h3><br>
               <div class="row separator_blank"></div>
@@ -130,37 +129,30 @@
                 Lucan</p>
             
           </div>
-
-          <!--form to send email-->
         </div>
-        <div class="row separator_blank"></div>
+        <!--form to send email-->
+        <div id="contact-us" class="row separator_blank"></div>
         <h3>Or leave us your details, we will contact you shortly</h3>
         <div class="row separator_blank"></div>
-        <div class="details-box" id="contact-form">
-          
-          <form onsubmit="sendEmail(); reset(); return false">
-            
-            
-          
-            <label for="Name">Enter your name:</label><br>
+        <div class="details-box">
+          <form id="contact-form" onsubmit="sendEmail(); reset(); return false">
+            <label for="name-input">Enter your name:</label><br>
             <input type="text" id="name-input" name="Name" placeholder="John Smith" required><br>
             <br>
-            <label for="E-mail">Enter your e-mail address:</label><br>
+            <label for="e-mail-input">Enter your e-mail address:</label><br>
             <input type="email" id="e-mail-input" name="E-mail" placeholder="John.Smith@gmail.com" required><br>
             <br>
-            <label for="Number">Enter your telephone number:</label><br>
+            <label for="telephone-input">Enter your telephone number:</label><br>
             <input type="tel" id="telephone-input" name="Number" placeholder="+353" required><br>
             <br>
-            <label for="Message">Enter here your message:</label><br>
+            <label for="message-input">Enter here your message:</label><br>
             <textarea id="message-input" name="Message" rows="4" cols="50"></textarea><br><br>
             <input type="submit" id="button" value="Submit">
           </form>
         </div>
         <!-- Bottom section Follow Us on FB ref Meta for Developers-->
-        
         <p><h3>Find us on facebook:</h3></p>
-        
-        <div class="fb-page" data-href="https://www.facebook.com/profile.php?id=100088157383912" data-tabs="timeline" data-width="500" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/profile.php?id=100088157383912" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/profile.php?id=100088157383912">J.M.Z Bakery</a></blockquote></div>
+        <div class="fb-page" data-href="https://www.facebook.com/profile.php?id=100088157383912" data-tabs="timeline" data-width="400" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/profile.php?id=100088157383912" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/profile.php?id=100088157383912">J.M.Z Bakery</a></blockquote></div>
         <div class="row separator_blank"></div>
         <p></p>
       </div>
@@ -197,38 +189,80 @@
 
     </div><!--Container fluid div end-->
 
-      <script src="https://smtpjs.com/v3/smtp.js"></script>
-      <script>
-        function checkResponse(message) {
-          if (message != 'OK') {
-            alert(message);
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+      /* add event listener on email and telephone input changes */
+      var email_input = document.getElementById("e-mail-input");
+      email_input.oninput = () => checkRequired();
+      var tel_input = document.getElementById("telephone-input");
+      tel_input.oninput = () => checkRequired();
+
+      /* this function checks if any of the e-mail or telephone inputs
+         are filled and then removes the required attribute so to allow
+         either the e-mail or telephone number to be left empty */
+      function checkRequired() {
+        /* if e-mail is provided, telephone input no longer needs to be required */
+        if (email_input.value == "") {
+          tel_input.setAttribute("required", "true");
+        } else {
+          tel_input.removeAttribute("required");
+        }
+        /* if phone number is provided, e-mail input no longer needs to be required */
+        if (tel_input.value == "") {
+          email_input.setAttribute("required", "true");
+        } else {
+          email_input.removeAttribute("required");
+        }
+      }
+
+      /* check for 'OK' message from smtp server */
+      function checkResponse(message) {
+        /* if the response is not OK, pass the server response in verbatim */
+        if (message != 'OK') {
+          alert(message);
+        }
+        /* confirm the email sending otherwise */
+        else {
+          alert("Thank you for contacting us, we will come back to you within 24 hours");
+        }
+      }
+
+      /* send email with customer details on form submit */
+      function sendEmail() {
+        /* get all child nodes of the contact form */ 
+        const contact_form = document.getElementById("contact-form");
+        const child_nodes = contact_form.childNodes;
+        var body = "";
+        /* loop throught all child elements of the contact form and compose the e-mail body */
+        for (i = 0; i < child_nodes.length; i++) {
+          /* ignore the submit button and labels */
+          if (child_nodes[i].tagName == 'INPUT' && child_nodes[i].type != 'submit') {
+            body += child_nodes[i].name + ': ' + child_nodes[i].value + '\n';
           }
-          else {
-            alert("Thank you for contacting us, we will come back to you within 24 hours");
+          /* handle the textarea tag specially */
+          else if (child_nodes[i].tagName == 'TEXTAREA' && child_nodes[i].value != "") {
+            body += "Sent the following message:\n";
+            body += child_nodes[i].value;
           }
         }
-        function sendEmail() {
-          var body = "name: " + document.getElementById("name-input").value +
-            " e-mail: " + document.getElementById("e-mail-input").value +
-            " phone: " + document.getElementById("telephone-input").value +
-            " Sent the following message: " + document.getElementById("message-input").value;
-          
-          Email.send({
-            Host : "smtp.elasticemail.com",
-            Username : "mariabonarska@gmail.com",
-            Password : "4924A800CA9C647D847D7132B78B7637155C",
-            To : 'jmz.bakeryproject@gmail.com',
-            From : 'mariabonarska@gmail.com',
-            Subject : "JMZ Contact Enquiry",
-            Body : body
-          }).then(
-            message => checkResponse(message)
-          );
-        }
-      </script>
+
+        /* use smtp.js Email.send function and wait for response */
+        Email.send({
+          Host : "smtp.elasticemail.com",
+          Username : "mariabonarska@gmail.com",
+          Password : "4924A800CA9C647D847D7132B78B7637155C",
+          To : 'jmz.bakeryproject@gmail.com',
+          From : 'mariabonarska@gmail.com',
+          Subject : "JMZ Contact Enquiry",
+          Body : body
+        }).then(
+          message => checkResponse(message)
+        );
+      }
+    </script>
 	  
 	  <!-- Script to load default value for login and cart -->
 	  <script src="contact.js"></script>
-	  
+
   </body>
 </html>
