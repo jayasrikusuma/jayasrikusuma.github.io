@@ -1,5 +1,6 @@
 /*Author1: Zouboulia */
 /* Author2: Jayasri (About, Login Form, Birthday Cake Order Form)*/
+/*Author3: Maria (Seasonal cakes, Contact us)*/
 
 html, body{
     text-align: center;
@@ -501,6 +502,7 @@ form button{
     position: absolute;
     bottom: 0;
     background: rgb(0, 0, 0); /* Fallback color */
+    /* styling copied from  https://www.w3schools.com/howto/howto_css_image_transparent.asp*/
     background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
     color: #f1f1f1;
     width: 100%;
